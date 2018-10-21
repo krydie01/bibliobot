@@ -8,6 +8,5 @@ const bot = new TelegramBot(TOKEN, {
 
 bot.on('message', (msg) => {
   console.log(msg)
-
-    bot.sendMessage(msg.chat.id, 'Здравствуйте! Я бот Библиотек Благовещенска!')
+    bot.sendMessage(msg.chat.id, 'Здравствуйте' + msg.from.first_name + '! ' + 'Я бот Библиотек Благовещенска! ')
 })
