@@ -8,4 +8,6 @@ const bot = new TelegramBot(TOKEN, {
 
 bot.on('message', (msg) => {
   console.log(msg)
+
+    bot.sendMessage(msg.chat.id, 'Здравствуйте! Я бот Библиотек Благовещенска!')
 })
