@@ -20,7 +20,14 @@ bot.onText(/\/start/, msg => {
   bot.sendMessage(id, 'hello')
 })
 
+bot.onText(/\/anounce/, (msg, arr) => {
+  const { id } = msg.chat
+  
+  bot.sendMessage(id, debug(arr))
+})
+
 bot.onText(/\/help (.+)/, (msg, arr) => {
   const { id } = msg.chat
+
   bot.sendMessage(id, debug(arr))
 })
