@@ -5,25 +5,19 @@ const debug = require('./helpers')
 console.log('Bot has been started')
 
 const bot = new TelegramBot(TOKEN, {
-  polling: {
-    interval: 300,
-    autoStart: true,
-    params: {
-      timeout: 10
-    }
-  }
+  polling: true
 })
 
 bot.onText(/\/start/, msg => {
   const { id } = msg.chat
 
-  bot.sendMessage(id, 'hello')
+  bot.sendMessage(id, 'Здравствуйте, давайте начнем! Выбирайте одну из команд!')
 })
 
 bot.onText(/\/anounce/, (msg, arr) => {
   const { id } = msg.chat
   
-  bot.sendMessage(id, debug(arr))
+  bot.sendMessage(id, 'Скоро будет выводится список анонсов')
 })
 
 bot.onText(/\/help (.+)/, (msg, arr) => {
